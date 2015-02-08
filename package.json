@@ -1,0 +1,32 @@
+{
+  "name": "front-log",
+  "version": "0.0.1",
+  "description": "Front-end loggin library with logging levels",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test",
+    "build": "./node_modules/.bin/gulp build"
+  },
+  "bugs": "https://github.com/AZaviruha/pager/issues",
+  "keywords": [
+    "react",
+    "react-component",
+    "pager",
+    "paginator",
+    "bootstrap"
+  ],
+  "author": "Alexei Zaviruha <a.zaviruha@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AZaviruha/front-log.git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "3.8.10",
+    "gulp-browserify": "0.5.1",
+    "gulp-concat": "2.4.3",
+    "gulp-uglify": "1.1.0",
+    "jquery": "^2.1.3"
+  }
+}
