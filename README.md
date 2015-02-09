@@ -21,6 +21,8 @@ There are six logging levels:
     log.fatal( 'This is fatal log record' );
 ```
 
+`trace` level is the lowest and `fatal` is the highest. Each logging level shows all logs from this level to the highest.
+
 ## Example
 
 See `demo/js/main.js`.
