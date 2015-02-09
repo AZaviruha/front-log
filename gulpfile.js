@@ -6,7 +6,7 @@ var gulp       = require( 'gulp' )
 
 
 gulp.task( 'build-lib-min', function () {
-    return gulp.src( 'src/index.js' )
+    return gulp.src( 'src/global.js' )
                .pipe( browserify() )
                .pipe( uglify() )
                .pipe( concat( 'front-log.min.js' ) )
