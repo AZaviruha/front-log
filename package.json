@@ -1,7 +1,7 @@
 {
   "name": "front-log",
-  "version": "0.0.3",
-  "description": "Front-end logger is a light-weight client-side logger, useful for production logging.",
+  "version": "0.0.4",
+  "description": "front-log is a light-weight client-side logger, useful for production logging.",
   "main": "dist/index.js",
   "scripts": {
     "build": "./node_modules/.bin/gulp"
