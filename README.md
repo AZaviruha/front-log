@@ -26,7 +26,12 @@ There are six logging levels:
 ## Example
 
 See `demo/js/main.js`.
-
+To run demo you need simple http server. On Linux you can run 
+```shell
+cd ./front-log/demo
+python -m SimpleHTTPServer 8080
+```
+from terminal.
 
 [npm-image]: http://img.shields.io/badge/npm-v0.0.5-green.svg
 [npm-url]: https://www.npmjs.org/package/front-log
