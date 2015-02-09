@@ -1,8 +1,9 @@
 # front-log
 [![NPM version][npm-image]][npm-url]
 
-*front-log* is a light-weight client-side logger, useful for production logging.
-Typical businnes-case: you don't want to show a mass of console-logs for everyone, who will open browser's console in your web-application. But you want to see these logs by demand.
+A light-weight client-side logger, useful for production.
+
+Typical business-case: you don't want to show a mass of console-logs for everyone, who will open browser's console in your web-application. But you want to see these logs by demand.
 So you can type the code below in console:
 ```javascript
     log.setLevel( log.LEVELS.DEBUG );
