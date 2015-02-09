@@ -28,5 +28,5 @@ There are six logging levels:
 See `demo/js/main.js`.
 
 
-[npm-image]: http://img.shields.io/badge/npm-v0.0.4-green.svg
+[npm-image]: http://img.shields.io/badge/npm-v0.0.5-green.svg
 [npm-url]: https://www.npmjs.org/package/front-log

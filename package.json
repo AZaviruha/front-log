@@ -1,6 +1,6 @@
 {
   "name": "front-log",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "front-log is a light-weight client-side logger, useful for production logging.",
   "main": "src/index.js",
   "scripts": {
