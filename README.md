@@ -9,6 +9,7 @@ So you can type the code below in console:
 ```
 and then just refresh the page. The logging level stores in browser's cookies, so you get all your logs after page refresh.
 
+
 ## Logging levels
 
 There are six logging levels:
@@ -22,6 +23,20 @@ There are six logging levels:
 ```
 
 `trace` level is the lowest and `fatal` is the highest. Each logging level shows all logs from this level to the highest.
+
+
+## Usage
+
+```javascript
+var log = reqiure( 'front-log' )
+```
+
+or 
+
+```html
+<script src="dist/front-log.min.js"></script>
+```
+
 
 ## Example
 

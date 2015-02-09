@@ -8,6 +8,8 @@ var gulp       = require( 'gulp' )
 gulp.task( 'build-lib-min', function () {
     return gulp.src( 'src/global.js' )
                .pipe( browserify() )
+               .pipe( concat( 'front-log.js' ) )
+               .pipe( gulp.dest( 'dist/' ) )
                .pipe( uglify() )
                .pipe( concat( 'front-log.min.js' ) )
                .pipe( gulp.dest( 'dist/' ) );
