@@ -29,7 +29,7 @@ There are six logging levels:
 ## Usage
 
 ```javascript
-var log = reqiure( 'front-log' )
+var log = require( 'front-log' )
 ```
 
 or 
