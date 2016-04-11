@@ -1,29 +1,51 @@
-var gulp       = require( 'gulp' )
-  , uglify     = require( 'gulp-uglify' )
-  , concat     = require( 'gulp-concat' )
-  , browserify = require( 'gulp-browserify' );
-  // , karma      = require( 'karma' ).server;
+var gulp       = require('gulp');
+var join       = require('path').join;
+var rimraf     = require('rimraf');
+var babel      = require('gulp-babel');
+var browserify = require('browserify');
+var source     = require('vinyl-source-stream');
+var buffer     = require('vinyl-buffer');
+var uglify     = require('gulp-uglify');
+var rename     = require('gulp-rename');
 
+var PATH = {
+	src  : 'src/',
+	dest : 'dist/',
+    demo : 'demo/'
+};
 
-gulp.task( 'build-lib-min', function () {
-    return gulp.src( 'src/global.js' )
-               .pipe( browserify() )
-               .pipe( concat( 'front-log.js' ) )
-               .pipe( gulp.dest( 'dist/' ) )
-               .pipe( uglify() )
-               .pipe( concat( 'front-log.min.js' ) )
-               .pipe( gulp.dest( 'dist/' ) );
+gulp.task('clear', function (next) {
+	rimraf(PATH.dest, next);
 });
 
+gulp.task('build', ['clear'], function () {
+	return browserify(join(PATH.src, 'index.js'), {
+			debug: true,
+			standalone: 'FrontLog'
+		})
+		.transform('babelify', {
+			presets: ['es2015', 'stage-0'],
+			plugins: ['transform-es2015-modules-commonjs']
+		})
+		.bundle()
+		.on('error', function(err) {
+			console.log('----------------------------------');
+			console.error(err);
+			console.log('----------------------------------');
 
-gulp.task( 'build-demo', function () {
-    return gulp.src( 'demo/js/main.js' )
-               .pipe( browserify() )
-               .pipe( concat( 'output.js' ) )
-               .pipe( gulp.dest( 'demo/js/' ) );
+			this.emit('end');
+		})
+		.pipe(source('front-log.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest(join(PATH.demo)))
+		.pipe(gulp.dest(join(PATH.dest)))
+        .pipe(uglify())
+        .pipe(rename('front-log.min.js'))
+		.pipe(gulp.dest(join(PATH.dest)));
 });
 
+gulp.task('watch', ['build'], function() {
+	gulp.watch(join(PATH.src, '**/*.js'),   ['build']);
+});
 
-var deps = [ 'build-lib-min', 'build-demo' ];
-gulp.task( 'default', deps );
-
+gulp.task('default', ['build']);

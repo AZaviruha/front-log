@@ -6,19 +6,25 @@
         <title>Front-log demo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        Open console to play with logger.
-        <script src="js/output.js"></script>
+        Open console and type `FrontLog` to play with logger.
+        <script src="./front-log.js"></script>
+
+        <script type="text/javascript">
+            window.onload = function () {
+                window.log = FrontLog;
+                log.trace('This is trace log record');
+                log.debug('This is debug log record');
+                log.info('This is info log record');
+                log.warn('This is warn log record');
+                log.error('This is error log record');
+                log.fatal('This is fatal log record');
+            };
+        </script>
     </body>
 </html>
