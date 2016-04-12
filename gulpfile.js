@@ -20,28 +20,28 @@ gulp.task('clear', function (next) {
 
 gulp.task('build', ['clear'], function () {
 	return browserify(join(PATH.src, 'index.js'), {
-			debug: true,
-			standalone: 'FrontLog'
-		})
-		.transform('babelify', {
-			presets: ['es2015', 'stage-0'],
-			plugins: ['transform-es2015-modules-commonjs']
-		})
-		.bundle()
-		.on('error', function(err) {
-			console.log('----------------------------------');
-			console.error(err);
-			console.log('----------------------------------');
+        	debug: true,
+        	standalone: 'FrontLog'
+        })
+        .transform('babelify', {
+        	presets: ['es2015', 'stage-0'],
+        	plugins: ['transform-es2015-modules-commonjs']
+        })
+        .bundle()
+        .on('error', function(err) {
+        	console.log('----------------------------------');
+        	console.error(err);
+        	console.log('----------------------------------');
 
-			this.emit('end');
-		})
-		.pipe(source('front-log.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest(join(PATH.demo)))
-		.pipe(gulp.dest(join(PATH.dest)))
+        	this.emit('end');
+        })
+        .pipe(source('front-log.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest(join(PATH.demo)))
+        .pipe(gulp.dest(join(PATH.dest)))
         .pipe(uglify())
         .pipe(rename('front-log.min.js'))
-		.pipe(gulp.dest(join(PATH.dest)));
+        .pipe(gulp.dest(join(PATH.dest)));
 });
 
 gulp.task('watch', ['build'], function() {

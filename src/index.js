@@ -31,11 +31,11 @@ function publicate(level, args) {
         case LEVELS.TRACE:
         case LEVELS.DEBUG:
         case LEVELS.INFO:  console.log.apply(console, args);
-                               break;
+                           break;
         case LEVELS.WARN:  console.warn.apply(console, args);
-                               break;
+                           break;
         case LEVELS.ERROR:
         case LEVELS.FATAL: console.error.apply(console, args);
-                               break;
+                           break;
     };
 }
