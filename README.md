@@ -53,5 +53,5 @@ or
 
 See `demo/index.html`.
 
-[npm-image]: http://img.shields.io/badge/npm-v1.0.0-green.svg
+[npm-image]: http://img.shields.io/badge/npm-v1.1.2-green.svg
 [npm-url]: https://www.npmjs.org/package/front-log
