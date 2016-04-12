@@ -1,9 +1,9 @@
 # front-log
 [![NPM version][npm-image]][npm-url]
 
-A light-weight client-side logger, useful for production.
+A lightweight client-side logger, useful for production.
 
-Typical business-case: you don't want to show a mass of console-logs for everyone, who will open browser's console in your web-application. But you want to see these logs by demand.
+Typical use case: you don't want to show a mass of console-logs for everyone, who will open browser's console in your web-application. But you want to see these logs by demand.
 So you can type the code below in console:
 
 ```javascript
@@ -11,6 +11,11 @@ FrontLog.setLevel(FrontLog.LEVELS.DEBUG);
 ```
 
 and then just refresh the page. The logging level stores in browser's local storage, so you get all your logs after page refresh.
+
+Or you can add `logLevel={LEVEL}` to the URL of your page.
+For example: `/my-supper-app/?logLevel=error`.
+
+Log level from query string has the **highest** priority, if present.
 
 
 ## Logging levels
