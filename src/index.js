@@ -22,7 +22,11 @@ export function setLevel(level, days) {
 };
 
 function log(level, ...args) {
-    let globLogLevel = localStorage.getItem('LOG_LEVEL') || LEVELS.NONE;
+    let urlLogLevelID  = (/logLevel=([a-zA-Z]+)/.exec(location.search) || [])[1];
+    let urlLogLevel    = urlLogLevelID && LEVELS[urlLogLevelID.toUpperCase()];
+    let storedLogLevel = localStorage.getItem('LOG_LEVEL');
+    let globLogLevel   = urlLogLevel || storedLogLevel || LEVELS.NONE;
+
     if (level <= globLogLevel) publicate(level, args);
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "front-log",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "A light-weight client-side logger, useful for production.",
   "main": "dist/front-log.js",
   "scripts": {
